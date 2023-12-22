@@ -30,7 +30,7 @@ const removeContact = async (contactId) => {
     return null;
   }
   const result = contacts.splice(index, 1);
-  writeContacts(contacts);
+  await writeContacts(contacts);
   return result;
 };
 
@@ -43,7 +43,7 @@ const addContact = async ({ name, email, phone }) => {
     phone,
   };
   contacts.push(newContact);
-  writeContacts(contacts);
+  await writeContacts(contacts);
   return newContact;
 };
 
